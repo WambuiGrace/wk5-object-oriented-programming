@@ -56,3 +56,35 @@ if __name__ == "__main__":
     print()
     print(elemental_hero.use_power())
     print(elemental_hero.use_element())
+    print()
+
+
+# Polymorphism Challenge! 🎭
+class vehicle:
+    def __init__(self, name, speed):
+        self.name = name
+        self.speed = speed
+
+    def move(self):
+        return f"{self.name} is moving at {self.speed} speed."
+
+class car(vehicle):
+    def move(self):
+        return f"{self.name} is driving at {self.speed} speed."
+
+class plane(vehicle):
+    def move(self):
+        return f"{self.name} is flying at {self.speed} speed."
+
+class boat(vehicle):
+    def move(self):
+        return f"{self.name} is sailing at {self.speed} speed."
+
+if __name__ == "__main__":
+    car = car("Car", "80 km/h")
+    plane = plane("Jet", "900 km/h")
+    boat = boat("Yacht", "50 km/h")
+
+    vehicles = [car, plane, boat]
+    for vehicle in vehicles:
+        print(vehicle.move())
